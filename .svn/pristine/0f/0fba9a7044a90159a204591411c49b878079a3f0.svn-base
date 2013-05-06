@@ -1,0 +1,62 @@
+<{include file="header.html"}>
+
+<html>
+	<body>
+		<p>
+			
+			<!-----------------------产品分类 demo---------------------->
+			<div class="category">
+				<{$producttype}>
+			</div>
+			<br>
+				
+			<div class="category">
+				<{$projecttype}>
+			</div>
+			
+			<style>
+				/*  父类 */
+				.category li{
+					background-color:red;
+				}
+				/*  子类 */
+				.category .csubset{
+					background-color:yellow;
+				}
+			</style>
+			<!-----------------------产品分类 demo---------------------->
+		</p>
+	<!--------------------------------------------->
+
+
+	<{section name=pro loop=$product}>
+		<{$product[pro].title}>
+		<{$product[pro].thumb}>
+		<{$product[pro].ext}>
+		<br>
+	<{/section}>
+	<!-------------------------------->
+	<{section name=i loop=$information}>
+		<{$information[i].index1}>
+		<{$i}>
+	<{/section}>
+	<br>
+	<!-------------------------------->
+	<{foreach key =kk item=ii from=$information}>
+		键:<{$kk}>
+		值:<{$ii}><br>
+	<{/foreach}>
+	<br>
+	<a>start</a>
+	<{$information.id}>
+	<{$information.title}>
+	<{$information.phone}>
+	<{$information.mobel_phone}>
+	<{$information.name}>
+	时间<{$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'}><!--当前时间-->
+	时间<{$information.time|date_format:'%Y-%m-%d %H:%M:%S'}><!-- 时间不够或者 时间 太小就不用输出不了 -->  
+	<!-------------------------------->
+	</body>
+</html>
+
+<{include file="footer.html"}>

@@ -1,0 +1,16 @@
+	<{foreach key =kk item=ii from=$newsdetail}>
+		<!--键:<{$kk}>-->
+		<!--值:<{$ii}><br>-->
+	<{/foreach}>
+	<{$newsdetail.title}>
+	<{$newsdetail.updatetime|date_format:'%Y-%m-%d %H:%M:%S'}>
+	<{$newsdetail.content }>
+
+	...<br><!--以此类推-->
+	<--
+	url:<{$base_url}>/newsdetail_<{$shang.id}>.html
+	<{$shang.title}>
+	<!------------- 翻页 -------------->
+	|
+	url:<{$base_url}>/newsdetail_<{$xia.id}>.html
+	<{$xia.title}>-->
