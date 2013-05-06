@@ -1,9 +1,0 @@
-
-
-	<{section name=i loop=$news}>
-	url:<{$base_url}>newsdetail_<{$news[i].id}>.html
-		<{$news[i].title}>--
-		<{$news[i].updatetime}>--<{$news[i].updatetime|date_format:'%Y-%m-%d %H:%M:%S'}>
-		<br>
-	<{/section}>
-	<{$links}>
